@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
-// Define the schema for the cards collection
+// Define the schema for the review card collection
 const reviewSchema = new mongoose.Schema({
   reviewID: {
-    type: String, // or ObjectId if cardID is an ObjectId
+    type: String, 
     required: true,
     unique: true,
   },
@@ -21,7 +21,7 @@ const reviewSchema = new mongoose.Schema({
         type: Number,
         required: true,
       },
-      // You can include other properties related to each review if needed
+      
     },
   ],
   overallRating: {
@@ -31,7 +31,7 @@ const reviewSchema = new mongoose.Schema({
   },
 });
 
-// Create a model using the schema
+
 const db = mongoose.model("ReviewDB", reviewSchema);
 
 module.exports = db;
